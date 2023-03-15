@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://ed5j0d3un6ws"]
+
+[ext_resource type="Texture2D" uid="uid://cijxru6xwiasm" path="res://icon.svg" id="1_gy2cg"]
+[ext_resource type="Script" path="res://TileMap.gd" id="1_oau8r"]
+[ext_resource type="Texture2D" uid="uid://d3t8wbki7l3vs" path="res://Foozle_2DT0008_GreenValley_Tileset_Pixel_Art/Foozle_2DT0008_GreenValley_Tileset_Pixel_Art.png" id="1_yq4pv"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="3_tm70a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pkvc5"]
+texture = ExtResource("1_yq4pv")
+1:1/0 = 0
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p51yp"]
+texture = ExtResource("1_gy2cg")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+3:3/0 = 0
+3:2/0 = 0
+0:4/0 = 0
+1:5/0 = 0
+2:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:6/0 = 0
+6:5/0 = 0
+6:4/0 = 0
+5:3/0 = 0
+4:2/0 = 0
+2:4/0 = 0
+2:5/0 = 0
+3:6/0 = 0
+6:7/0 = 0
+6:3/0 = 0
+6:2/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+5:0/0 = 0
+4:1/0 = 0
+4:3/0 = 0
+4:4/0 = 0
+4:5/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+5:5/0 = 0
+7:3/0 = 0
+7:2/0 = 0
+7:4/0 = 0
+7:7/0 = 0
+7:6/0 = 0
+7:5/0 = 0
+7:1/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+4:0/0 = 0
+1:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hx2cv"]
+sources/1 = SubResource("TileSetAtlasSource_p51yp")
+sources/0 = SubResource("TileSetAtlasSource_pkvc5")
+
+[node name="main" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_hx2cv")
+format = 2
+script = ExtResource("1_oau8r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(583, 324)
+script = ExtResource("3_tm70a")
