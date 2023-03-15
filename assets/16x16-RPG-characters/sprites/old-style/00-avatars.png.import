@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3t8wbki7l3vs"
-path="res://.godot/imported/Foozle_2DT0008_GreenValley_Tileset_Pixel_Art.png-d542ef6a1cbbf4d9c88bd9abf57b4cfb.ctex"
+uid="uid://cc11e5pbgadtt"
+path="res://.godot/imported/00-avatars.png-4c525c23a13fe15ac6d4e03cfdfeeae8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Foozle_2DT0008_GreenValley_Tileset_Pixel_Art/Foozle_2DT0008_GreenValley_Tileset_Pixel_Art.png"
-dest_files=["res://.godot/imported/Foozle_2DT0008_GreenValley_Tileset_Pixel_Art.png-d542ef6a1cbbf4d9c88bd9abf57b4cfb.ctex"]
+source_file="res://assets/16x16-RPG-characters/sprites/old-style/00-avatars.png"
+dest_files=["res://.godot/imported/00-avatars.png-4c525c23a13fe15ac6d4e03cfdfeeae8.ctex"]
 
 [params]
 

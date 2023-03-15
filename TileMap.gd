@@ -7,6 +7,8 @@ extends TileMap
 # making a new perlin noise 
 var noise = FastNoiseLite.new()
 
+@onready var selector = $selector
+
 func _ready():
 	# randomize()
 	
@@ -22,11 +24,11 @@ func _ready():
 	generate_level()
 
 # dubug stuff for resetting the scence and generating a new map
-func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		if event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
-			print("Reloading...")
-			get_tree().reload_current_scene()
+#func _unhandled_input(event):
+	#if event is InputEventMouseButton:
+		#if event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
+			#print("Reloading...")
+			#get_tree().reload_current_scene()
 
 # generating the level 
 func generate_level():
@@ -44,7 +46,24 @@ func generate_level():
 # generates an id to decide weahter or not to place a block
 # for now 0 is a dirt block and -1 is an empty block
 func generate_id(noise_level: float):
-	if noise_level <= 0:
+	if noise_level <= -0.2:
 		return -1
 	else:
 		return 0
+		
+func _physics_process(delta):
+	if Input.is_action_pressed("m_left"):
+		var tile = local_to_map(selector.mouse_pos * 8)
+		var tile_id = get_cell_source_id(0, tile)
+		
+		var new_id = -1
+		
+		if tile_id != -1:
+			if tile_id < 0:
+				new_id = (tile_id + 1)
+			set_cell(0, tile, new_id)
+	
+	if Input.is_action_pressed("m_right"):
+		var tile = local_to_map(selector.mouse_pos * 8)
+		set_cell(0, tile, 0, Vector2i(1, 1))
+		
